@@ -7,7 +7,7 @@ master.brian
 
 [worker]
 worker-1.brian
-worker-1.brian
+worker-2.brian
 
 [nfs]
 nfs.brian
