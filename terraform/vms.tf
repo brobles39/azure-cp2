@@ -51,7 +51,7 @@ resource "azurerm_linux_virtual_machine" "myVM2" {
     name                = "worker-1"
     resource_group_name = azurerm_resource_group.rg.name
     location            = azurerm_resource_group.rg.location
-    size                = var.vm_size
+    size                = var.vm_size2
     admin_username      = "pacman"
     network_interface_ids = [ azurerm_network_interface.myNic2.id ]
     disable_password_authentication = true
@@ -96,7 +96,7 @@ resource "azurerm_linux_virtual_machine" "myVM3" {
     name                = "worker-2"
     resource_group_name = azurerm_resource_group.rg.name
     location            = azurerm_resource_group.rg.location
-    size                = var.vm_size
+    size                = var.vm_size2
     admin_username      = "pacman"
     network_interface_ids = [ azurerm_network_interface.myNic3.id ]
     disable_password_authentication = true
@@ -141,7 +141,7 @@ resource "azurerm_linux_virtual_machine" "myVM4" {
     name                = "nfs"
     resource_group_name = azurerm_resource_group.rg.name
     location            = azurerm_resource_group.rg.location
-    size                = var.vm_size
+    size                = var.vm_size2
     admin_username      = "pacman"
     network_interface_ids = [ azurerm_network_interface.myNic4.id ]
     disable_password_authentication = true
