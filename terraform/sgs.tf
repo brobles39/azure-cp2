@@ -40,36 +40,14 @@ resource "azurerm_network_security_group" "mySecGroup2" {
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
 
-    custom_rules {
-        name                       = "SSH"
+    security_rule {
+        name                       = "SSH AND HTTP"
         priority                   = 1001
         direction                  = "Inbound"
         access                     = "Allow"
         protocol                   = "Tcp"
         source_port_range          = "*"
-        destination_port_range     = "22"
-        source_address_prefix      = "*"
-        destination_address_prefix = "*"
-    },
-    {
-        name                       = "HTTP"
-        priority                   = 200
-        direction                  = "Inbound"
-        access                     = "Allow"
-        protocol                   = "Tcp"
-        source_port_range          = "*"
-        destination_port_range     = "80"
-        source_address_prefix      = "*"
-        destination_address_prefix = "*"
-    },
-    {
-        name                       = "ALL"
-        priority                   = 1002
-        direction                  = "Outbound"
-        access                     = "Allow"
-        protocol                   = "Tcp"
-        source_port_range          = "*"
-        destination_port_range     = "*"
+        destination_port_ranges    = ["22", "80"]
         source_address_prefix      = "*"
         destination_address_prefix = "*"
     }
@@ -96,36 +74,14 @@ resource "azurerm_network_security_group" "mySecGroup3" {
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
 
-    custom_rules {
-        name                       = "SSH"
+    security_rule {
+        name                       = "SSH AND HTTP"
         priority                   = 1001
         direction                  = "Inbound"
         access                     = "Allow"
         protocol                   = "Tcp"
         source_port_range          = "*"
-        destination_port_range     = "22"
-        source_address_prefix      = "*"
-        destination_address_prefix = "*"
-    },
-    {
-        name                       = "HTTP"
-        priority                   = 200
-        direction                  = "Inbound"
-        access                     = "Allow"
-        protocol                   = "Tcp"
-        source_port_range          = "*"
-        destination_port_range     = "80"
-        source_address_prefix      = "*"
-        destination_address_prefix = "*"
-    },
-    {
-        name                       = "ALL"
-        priority                   = 1002
-        direction                  = "Outbound"
-        access                     = "Allow"
-        protocol                   = "Tcp"
-        source_port_range          = "*"
-        destination_port_range     = "*"
+        destination_port_ranges    = ["22", "80"]
         source_address_prefix      = "*"
         destination_address_prefix = "*"
     }
@@ -152,25 +108,14 @@ resource "azurerm_network_security_group" "mySecGroup4" {
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
 
-    custom_rules {
-        name                       = "SSH"
+    security_rule {
+        name                       = "SSH AND HTTP"
         priority                   = 1001
         direction                  = "Inbound"
         access                     = "Allow"
         protocol                   = "Tcp"
         source_port_range          = "*"
-        destination_port_range     = "22"
-        source_address_prefix      = "*"
-        destination_address_prefix = "*"
-    },
-    {
-        name                       = "ALL"
-        priority                   = 1002
-        direction                  = "Outbound"
-        access                     = "Allow"
-        protocol                   = "Tcp"
-        source_port_range          = "*"
-        destination_port_range     = "*"
+        destination_port_ranges    = ["22", "80"]
         source_address_prefix      = "*"
         destination_address_prefix = "*"
     }
